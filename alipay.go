@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/smartwalle/alipay/encoding"
+	"github.com/pilafusama/alipay/encoding"
 )
 
 var (
