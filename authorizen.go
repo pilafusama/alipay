@@ -42,7 +42,7 @@ func (this SystemOauthToken) ExtJSONParamValue() string {
 	return marshal(this)
 }
 
-func (this *AliPay) GetSystemOauthToken(param AliPayTradePay) (results *SystemOauthTokenRsp, err error) {
+func (this *AliPay) GetSystemOauthToken(param SystemOauthToken) (results *SystemOauthTokenRsp, err error) {
 	err = this.doRequest("POST", param, &results)
 	return results, err
 }
