@@ -49,6 +49,7 @@ func (this *AliPay) GetSystemOauthToken(param SystemOauthToken) (results *System
 
 // SystemOauthTokenRsp 换取授权访问令牌接口请求参数
 type SystemOauthTokenRsp struct {
+	ErrorResponse       `json:"error_response"`
 	SystemOauthTokenRsp struct {
 		UserId       string `json:"user_id"`
 		AccessToken  string `json:"access_token"`
@@ -57,5 +58,13 @@ type SystemOauthTokenRsp struct {
 		ReExpiresIn  int64  `json:"re_expires_in"`
 		AuthStart    string `json:"auth_start"`
 	} `json:"alipay_system_oauth_token_response"`
+
 	Sign string `json:"sign"`
+}
+
+type ErrorResponse struct {
+	Code    string `json:"code"`
+	Msg     string `json:"msg"`
+	SubCode string `json:"sub_code"`
+	SubMsg  string `json:"sub_msg"`
 }
